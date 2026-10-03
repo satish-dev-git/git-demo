@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Satish Kumar — Data Analyst, Data Science & Full Stack Developer</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Satish Kumar, 4th-Year B.Tech CSIT student at SIRT Bhopal. Hands-on project experience in Data Analytics, Data Science, AI-focused development, and Full Stack Web Development.">
+  <meta name="keywords" content="Satish Kumar, Data Analyst, Data Science, Machine Learning, Full Stack Developer, SIRT Bhopal, Python, SQL, Power BI, Advanced Excel, React, Node.js, Express, MongoDB, CodeGuardian AI, Zuvo">
+  <meta name="author" content="Satish Kumar">
+  <meta name="theme-color" content="#0b0b0f">
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://satish-dev-git.github.io">
+  <meta property="og:title" content="Satish Kumar — Data Analytics, Data Science & Full Stack Developer">
+  <meta property="og:description" content="4th-Year B.Tech CSIT student at SIRT Bhopal. Turning data and ideas into high-impact products.">
+  <meta property="og:image" content="assets/og-cover.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Satish Kumar — Portfolio">
+  <meta name="twitter:description" content="Turning data and ideas into products. Explore projects in Data Analytics, AI, and Full Stack Development.">
+
+  <!-- Google Fonts: Syne (Display), Plus Jakarta Sans (Body), Instrument Serif (Accent) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- GSAP & Lenis via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- Background Ambient Cursor Glow Blob -->
+  <div class="ambient-glow" id="ambientGlow" aria-hidden="true"></div>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="preloader-inner">
+      <div class="preloader-counter-wrap">
+        <span class="preloader-counter" id="preloaderCounter">0</span>
+        <span class="preloader-symbol">%</span>
+      </div>
+      <div class="preloader-identity">
+        <span>S A T I S H &nbsp; K U M A R</span>
+      </div>
+      <div class="preloader-track">
+        <div class="preloader-progress" id="preloaderProgress"></div>
+      </div>
+      <div class="preloader-subtext">Initializing Portfolio Experience</div>
+    </div>
+  </div>
+
+  <!-- FULLSCREEN LUXURY MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Site Navigation">
+    <div class="menu-backdrop"></div>
+    <div class="menu-container">
+      <div class="menu-header">
+        <div class="menu-brand-wrap">
+          <img src="assets/satish-profile.jpg" alt="Satish Kumar" class="menu-avatar-img">
+          <div class="menu-brand-text">
+            <span class="menu-brand">SATISH KUMAR</span>
+            <span class="menu-brand-sub">SIRT Bhopal &bull; CSIT '27</span>
+          </div>
+        </div>
+        <button class="menu-close-btn" id="menuCloseBtn" aria-label="Close Menu">
+          <span>Close</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="menu-nav">
+        <ul class="menu-links">
+          <li class="menu-item">
+            <a href="#hero" class="menu-link" data-index="01">
+              <span class="menu-num">01</span>
+              <span class="menu-title">Home</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#philosophy" class="menu-link" data-index="02">
+              <span class="menu-num">02</span>
+              <span class="menu-title">Philosophy</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#work" class="menu-link" data-index="03">
+              <span class="menu-num">03</span>
+              <span class="menu-title">Selected Work</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#journey" class="menu-link" data-index="04">
+              <span class="menu-num">04</span>
+              <span class="menu-title">Journey &amp; Skills</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#achievements" class="menu-link" data-index="05">
+              <span class="menu-num">05</span>
+              <span class="menu-title">Achievements</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#contact" class="menu-link" data-index="06">
+              <span class="menu-num">06</span>
+              <span class="menu-title">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="menu-footer">
+        <div class="menu-contact-info">
+          <div class="menu-info-label">Direct Contact</div>
+          <a href="mailto:satishkumar86367@gmail.com" class="menu-info-val">satishkumar86367@gmail.com</a>
+          <span class="menu-info-val">+91 9798545934</span>
+        </div>
+        <div class="menu-socials">
+          <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="menu-social-link">GitHub ↗</a>
+          <a href="https://linkedin.com/in/satish-kumar-995140294" target="_blank" rel="noopener noreferrer" class="menu-social-link">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-left">
+      <a href="#hero" class="brand-link" aria-label="Satish Kumar Home">
+        <div class="brand-avatar-box">
+          <img src="assets/satish-profile.jpg" alt="Satish Kumar" class="brand-avatar-img">
+          <span class="avatar-status-dot" title="Available for opportunities"></span>
+        </div>
+        <div class="brand-info">
+          <span class="brand-name">Satish Kumar</span>
+          <span class="brand-meta">CSIT &bull; 2023–2027</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="header-right">
+      <div class="status-indicator" title="Current Status">
+        <span class="pulse-ring"></span>
+        <span class="status-text">Available for Opportunities</span>
+      </div>
+      <button class="sound-toggle-btn" id="soundToggleBtn" aria-label="Toggle Interface Sound FX" title="Sound Effects">
+        <svg class="sound-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+      </button>
+      <button class="menu-trigger-btn" id="menuTriggerBtn" aria-label="Open Navigation Menu">
+        <span class="menu-trigger-text">Menu</span>
+        <span class="menu-trigger-plus">+</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main id="mainContent">
+
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section" id="hero">
+      
+      <!-- TOP BAR -->
+      <div class="hero-top-bar">
+        <div class="tagline-pill">
+          <span class="pill-dot"></span>
+          <span class="tagline-text">Turning data and ideas into products</span>
+        </div>
+        <div class="hero-college-badge">
+          <span class="college-dot"></span>
+          <span>4th-Year B.Tech CSIT // SIRT Bhopal</span>
+        </div>
+      </div>
+
+      <!-- CENTER GIANT TYPOGRAPHY (PAHLE JESA ICONIC SATISH) -->
+      <div class="hero-center-stage">
+        <h1 class="hero-big-title" aria-label="SATISH">
+          <span class="letter-char" data-letter="S">S</span>
+          <span class="letter-char" data-letter="A">A</span>
+          <span class="letter-char" data-letter="T">T</span>
+          <span class="letter-char" data-letter="I">I</span>
+          <span class="letter-char" data-letter="S">S</span>
+          <span class="letter-char" data-letter="H">H</span>
+        </h1>
+        <div class="hero-title-accent">
+          <span class="accent-line"></span>
+          <span class="accent-role">Data Analytics &amp; Data Science <span class="role-sep">//</span> Full Stack Developer <span class="role-sep">//</span> Machine Learning &amp; AI</span>
+          <span class="accent-line"></span>
+        </div>
+      </div>
+
+      <!-- DYNAMIC SHOWCASE STAGE: 3D CARD + BIO & CONTROLS -->
+      <div class="hero-showcase-stage">
+        
+        <!-- LEFT: BIO & ACTION CONTROLS -->
+        <div class="hero-intro-col">
+          <p class="hero-lead-desc">
+            4th-year CSIT student at <strong>Sagar Institute of Research &amp; Technology (SIRT), Bhopal</strong> with hands-on project experience in 
+            <strong>Data Analytics &amp; Data Science</strong>, <strong>AI-focused development</strong>, and <strong>Full Stack Web Development</strong>. 
+            Comfortable working with Python, SQL, Excel, Power BI, React, and Node.js to solve real-world problems.
+          </p>
+
+          <!-- QUICK SKILL BADGES -->
+          <div class="hero-quick-skills">
+            <span class="quick-skill-tag"><span class="tag-icon">📊</span> Data Analytics</span>
+            <span class="quick-skill-tag"><span class="tag-icon">🐍</span> Python</span>
+            <span class="quick-skill-tag"><span class="tag-icon">⚡</span> Machine Learning</span>
+            <span class="quick-skill-tag"><span class="tag-icon">🗄️</span> SQL</span>
+            <span class="quick-skill-tag"><span class="tag-icon">⚛️</span> React.js</span>
+            <span class="quick-skill-tag"><span class="tag-icon">🚀</span> Node &amp; Express</span>
+          </div>
+
+          <!-- HERO CTA BUTTONS -->
+          <div class="hero-cta-group">
+            <a href="#work" class="btn btn-primary" data-magnetic>
+              <span>Explore Projects</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-outline" data-magnetic>
+              <span>Let's Talk</span>
+            </a>
+            <a href="mailto:satishkumar86367@gmail.com" class="btn btn-ghost direct-email-btn" data-magnetic>
+              <span>Direct Email ↗</span>
+            </a>
+          </div>
+
+          <div class="hero-scroll-indicator" id="heroScrollHint">
+            <div class="scroll-mouse">
+              <span class="mouse-wheel"></span>
+            </div>
+            <span class="scroll-label">Scroll to Explore</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: 3D HOLOGRAPHIC PORTRAIT SHOWCASE -->
+        <div class="hero-3d-stage" id="hero3DStage">
+          <!-- Cyber Ambient Aura & Rings -->
+          <div class="holo-ambient-aura" aria-hidden="true"></div>
+          <div class="holo-orbit-ring ring-outer" aria-hidden="true"></div>
+          <div class="holo-orbit-ring ring-inner" aria-hidden="true"></div>
+          <div class="holo-matrix-dots" aria-hidden="true"></div>
+
+          <!-- THE 3D INTERACTIVE TILT CONTAINER -->
+          <div class="holo-card-perspective-box" id="holoPerspectiveBox">
+            <div class="holo-card" id="holoCard">
+              
+              <!-- Specular Sheen Glow tracking mouse/touch -->
+              <div class="holo-glare" id="holoGlare" aria-hidden="true"></div>
+              
+              <!-- Cyber Border Neon Lines -->
+              <div class="holo-corner-bracket bracket-tl" aria-hidden="true"></div>
+              <div class="holo-corner-bracket bracket-tr" aria-hidden="true"></div>
+              <div class="holo-corner-bracket bracket-bl" aria-hidden="true"></div>
+              <div class="holo-corner-bracket bracket-br" aria-hidden="true"></div>
+
+              <!-- CARD HEADER -->
+              <div class="holo-card-header">
+                <div class="holo-id-tag">
+                  <span class="holo-live-dot"></span>
+                  <span class="holo-id-text">SIRT-CSIT &bull; '27</span>
+                </div>
+                <div class="holo-signal-tag">
+                  <span class="signal-bar bar-1"></span>
+                  <span class="signal-bar bar-2"></span>
+                  <span class="signal-bar bar-3"></span>
+                  <span class="signal-text">ONLINE</span>
+                </div>
+              </div>
+
+              <!-- PHOTO PORTRAIT CONTAINER -->
+              <div class="holo-photo-container">
+                <div class="holo-scan-beam" aria-hidden="true"></div>
+                <div class="holo-gradient-rim" aria-hidden="true"></div>
+                <img 
+                  src="assets/satish-profile.jpg" 
+                  alt="Satish Kumar - Data Analyst, Data Science & Full Stack Developer" 
+                  class="holo-profile-img" 
+                  id="holoProfileImg"
+                  loading="eager"
+                >
+                <div class="holo-photo-vignette" aria-hidden="true"></div>
+              </div>
+
+              <!-- CARD FOOTER / IDENTITY HUD -->
+              <div class="holo-card-footer">
+                <div class="holo-identity-col">
+                  <span class="holo-name-badge">SATISH KUMAR</span>
+                  <span class="holo-role-badge">Data Science &bull; Full Stack</span>
+                </div>
+                <div class="holo-college-chip">
+                  <span>SIRT BHOPAL</span>
+                </div>
+              </div>
+
+              <!-- 3D FLOATING HUD BADGES (PROJECTING IN Z-SPACE) -->
+              <div class="hud-floating-badge hud-badge-top-left" data-depth="55">
+                <div class="hud-badge-icon">🎓</div>
+                <div class="hud-badge-info">
+                  <span class="hud-badge-kicker">EDUCATION</span>
+                  <span class="hud-badge-title">B.Tech CSIT (4th Year)</span>
+                  <span class="hud-badge-sub">SIRT Bhopal</span>
+                </div>
+              </div>
+
+              <div class="hud-floating-badge hud-badge-top-right" data-depth="45">
+                <div class="hud-badge-icon">📊</div>
+                <div class="hud-badge-info">
+                  <span class="hud-badge-kicker">EXPERTISE</span>
+                  <span class="hud-badge-title">Data Analytics &amp; ML</span>
+                  <span class="hud-badge-sub">Python &bull; SQL &bull; Power BI</span>
+                </div>
+              </div>
+
+              <div class="hud-floating-badge hud-badge-bottom-left" data-depth="50">
+                <div class="hud-badge-icon">⚡</div>
+                <div class="hud-badge-info">
+                  <span class="hud-badge-kicker">ENGINEERING</span>
+                  <span class="hud-badge-title">Full Stack Web</span>
+                  <span class="hud-badge-sub">React &bull; Node &bull; MongoDB</span>
+                </div>
+              </div>
+
+              <div class="hud-floating-badge hud-badge-bottom-right" data-depth="65">
+                <div class="hud-badge-icon pulse-dot-icon"></div>
+                <div class="hud-badge-info">
+                  <span class="hud-badge-kicker">STATUS</span>
+                  <span class="hud-badge-title">Open for Opportunities</span>
+                  <span class="hud-badge-sub">Internships &bull; Entry Roles</span>
+                </div>
+              </div>
+
+              <!-- 3D INTERACTIVE CONTROLLER PILL -->
+              <div class="holo-mode-pill" data-depth="40">
+                <span class="holo-mode-icon">✦</span>
+                <span>3D TILT ACTIVE &bull; MOVE OR TOUCH</span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE PHILOSOPHY -->
+    <section class="philosophy-section" id="philosophy">
+      <div class="philosophy-art-stage">
+        <!-- Procedural Canvas Artwork with deep red fluid waves -->
+        <canvas id="philosophyCanvas" class="philosophy-canvas"></canvas>
+        <div class="philosophy-art-overlay"></div>
+        <div class="philosophy-vignette"></div>
+
+        <div class="philosophy-content-container">
+          <div class="section-badge">
+            <span class="badge-num">// 01</span>
+            <span class="badge-label">THE PHILOSOPHY</span>
+          </div>
+
+          <h2 class="philosophy-headline">
+            THE PHILOSOPHY
+          </h2>
+
+          <div class="philosophy-reveal-text" id="philosophyText">
+            <p class="word-split">
+              I believe raw data is just digital noise until analytical rigor turns it into direction.
+              Software is only as powerful as the practical problem it solves and the security that protects it.
+              From self-taught full-stack architecture to rigorous data cleaning in Python and SQL,
+              my focus is building resilient systems that think, scale, and deliver verifiable impact.
+            </p>
+          </div>
+
+          <div class="philosophy-traits">
+            <div class="trait-card">
+              <span class="trait-number">01</span>
+              <h3 class="trait-title">Data-Driven Precision</h3>
+              <p class="trait-desc">Python & SQL workflows that scrub out anomalies and surface true business KPIs.</p>
+            </div>
+            <div class="trait-card">
+              <span class="trait-number">02</span>
+              <h3 class="trait-title">Full-Stack Execution</h3>
+              <p class="trait-desc">Modern React, Node, Express, and MongoDB architectures built for production reliability.</p>
+            </div>
+            <div class="trait-card">
+              <span class="trait-number">03</span>
+              <h3 class="trait-title">Continuous Curiosity</h3>
+              <p class="trait-desc">Relentless self-taught learning culture, diving deep into AI security and intelligent models.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SELECTED WORK -->
+    <section class="work-section" id="work">
+      <div class="section-container">
+        
+        <div class="work-header">
+          <div class="work-header-left">
+            <div class="section-badge">
+              <span class="badge-num">// 02</span>
+              <span class="badge-label">PORTFOLIO PROJECTS</span>
+            </div>
+            <h2 class="section-title">Selected <span class="text-accent italic-serif">Creations</span></h2>
+          </div>
+          <p class="work-header-desc">
+            Directly from practical development and analytical exploration. No inflated numbers—pure engineering, working code, and real architecture.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- PROJECT 1: CodeGuardian AI -->
+          <article class="project-card" data-tilt>
+            <div class="project-card-glow"></div>
+            
+            <div class="project-media">
+              <div class="project-preview-mockup codeguardian-mockup">
+                <!-- High-tech Security Scanner Visual -->
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                  <span class="mockup-title">guardian-core :: security_engine.py</span>
+                  <span class="mockup-badge">AI ACTIVE</span>
+                </div>
+                <div class="mockup-body">
+                  <div class="terminal-line"><span class="t-prompt">$</span> <span class="t-cmd">codeguardian scan --mode=autonomous</span></div>
+                  <div class="terminal-line t-dim">[+] Parsing AST & Code Graphs...</div>
+                  <div class="terminal-line t-highlight">[!] 3 Vulnerabilities Detected & Isolated</div>
+                  <div class="scanner-viz">
+                    <div class="radar-box">
+                      <div class="radar-sweep"></div>
+                      <div class="radar-point p1"></div>
+                      <div class="radar-point p2"></div>
+                      <div class="radar-point p3"></div>
+                    </div>
+                    <div class="vuln-stats">
+                      <div class="stat-pill"><span class="k">SQLi:</span> <span class="v ok">0 detected</span></div>
+                      <div class="stat-pill"><span class="k">XSS:</span> <span class="v patch">Remediated</span></div>
+                      <div class="stat-pill"><span class="k">Auth:</span> <span class="v shield">Hardened</span></div>
+                    </div>
+                  </div>
+                  <div class="terminal-line t-success">[✔] Autonomous patch generated & verified.</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tech-tag">AI</span>
+                <span class="tech-tag">Software Security</span>
+                <span class="tech-tag">Machine Learning</span>
+                <span class="tech-tag">CNN / Neural Heuristics</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">AST Code Graph</span>
+              </div>
+
+              <h3 class="project-title">
+                CodeGuardian AI
+                <span class="project-subtitle">Autonomous Security Engineer for Modern Development | AI, Software Security</span>
+              </h3>
+
+              <div class="project-bullets">
+                <div class="bullet-item">
+                  <span class="bullet-icon">●</span>
+                  <p>Designed an AI-focused security engineering project aimed at bridging the gap between rapid software development and enterprise-grade security.</p>
+                </div>
+                <div class="bullet-item">
+                  <span class="bullet-icon">●</span>
+                  <p>Explored how AI-driven review processes can support secure coding practices within modern development workflows.</p>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" data-magnetic>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Repository</span>
+                </a>
+                <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" data-magnetic>
+                  <span>Architecture ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Data Analytics & Data Science Project -->
+          <article class="project-card" data-tilt>
+            <div class="project-card-glow"></div>
+            
+            <div class="project-media">
+              <div class="project-preview-mockup analytics-mockup">
+                <!-- Analytics & Data Science Dashboard Preview Visual -->
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                  <span class="mockup-title">data_science_suite // eda_cleaning_pipeline</span>
+                  <span class="mockup-badge">DATA ANALYTICS &bull; DATA SCIENCE</span>
+                </div>
+                <div class="mockup-body analytics-body">
+                  <div class="kpi-row">
+                    <div class="mini-kpi">
+                      <span class="kpi-lbl">Cleaning Status</span>
+                      <span class="kpi-num">100% Prepared</span>
+                    </div>
+                    <div class="mini-kpi highlight">
+                      <span class="kpi-lbl">Analytics &amp; DS</span>
+                      <span class="kpi-num">Insights Extracted</span>
+                    </div>
+                    <div class="mini-kpi">
+                      <span class="kpi-lbl">Dashboards</span>
+                      <span class="kpi-num">Power BI &amp; Excel</span>
+                    </div>
+                  </div>
+                  <div class="dashboard-chart-preview">
+                    <div class="chart-bars">
+                      <div class="c-bar" style="--h: 45%;"></div>
+                      <div class="c-bar" style="--h: 68%;"></div>
+                      <div class="c-bar" style="--h: 35%;"></div>
+                      <div class="c-bar highlight" style="--h: 92%;"></div>
+                      <div class="c-bar" style="--h: 60%;"></div>
+                      <div class="c-bar" style="--h: 84%;"></div>
+                      <div class="c-bar" style="--h: 72%;"></div>
+                    </div>
+                    <div class="chart-curve-svg">
+                      <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+                        <path d="M0,35 Q30,10 60,25 T120,5 T170,18 L200,8" fill="none" stroke="#ff3b30" stroke-width="2.5" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="pipeline-flow-tag">
+                    <span>Python &amp; SQL Cleaning</span> → <span>EDA &amp; Data Science</span> → <span>Power BI &amp; Excel Visuals</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tech-tag">Data Analytics</span>
+                <span class="tech-tag">Data Science</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Seaborn</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">Power BI</span>
+                <span class="tech-tag">Advanced Excel</span>
+              </div>
+
+              <h3 class="project-title">
+                Data Analytics &amp; Data Science Project
+                <span class="project-subtitle">Data Cleaning, Statistical Exploration &amp; Interactive Dashboards</span>
+              </h3>
+
+              <div class="project-bullets">
+                <div class="bullet-item">
+                  <span class="bullet-icon">●</span>
+                  <p>Performed data cleaning and preparation to structure raw data for analysis.</p>
+                </div>
+                <div class="bullet-item">
+                  <span class="bullet-icon">●</span>
+                  <p>Analyzed data using Python and SQL, and built visualizations and dashboards in Power BI and Excel.</p>
+                </div>
+                <div class="bullet-item">
+                  <span class="bullet-icon">●</span>
+                  <p>Applied core data analytics techniques to extract insights and summarize results.</p>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" data-magnetic>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Repository</span>
+                </a>
+                <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" data-magnetic>
+                  <span>Dashboard Insights ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Zuvo -->
+          <article class="project-card project-card-wide" data-tilt>
+            <div class="project-card-glow"></div>
+            
+            <div class="project-media">
+              <div class="project-preview-mockup zuvo-mockup">
+                <!-- E-Commerce Marketplace UI Visual -->
+                <div class="mockup-header">
+                  <div class="mockup-dots">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+                  <span class="mockup-title">zuvo-marketplace // client &bull; api:5000</span>
+                  <span class="mockup-badge">MERN STACK</span>
+                </div>
+                <div class="mockup-body zuvo-body">
+                  <div class="zuvo-storefront-bar">
+                    <span class="store-logo">ZUVO.</span>
+                    <div class="store-nav-dummy">
+                      <span>Products</span>
+                      <span>Categories</span>
+                      <span>Orders</span>
+                    </div>
+                    <span class="cart-pill">Cart (2)</span>
+                  </div>
+                  <div class="product-grid-dummy">
+                    <div class="p-card-dummy">
+                      <div class="p-img p-img-1"></div>
+                      <div class="p-info-bar">
+                        <span class="p-name">Cyber Minimalist Watch</span>
+                        <span class="p-price">$189.00</span>
+                      </div>
+                    </div>
+                    <div class="p-card-dummy">
+                      <div class="p-img p-img-2"></div>
+                      <div class="p-info-bar">
+                        <span class="p-name">Acoustic ANC Pro</span>
+                        <span class="p-price">$249.00</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="api-stream-tag">
+                    <span class="api-status">● MongoDB Connected</span>
+                    <span class="api-route">POST /api/orders/checkout 201 Created</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-tags">
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">Express</span>
+                <span class="tech-tag">MongoDB</span>
+                <span class="tech-tag">Web Development</span>
+                <span class="tech-tag">Full Stack</span>
+              </div>
+
+              <h3 class="project-title">
+                Zuvo — Full-Stack E-Commerce Marketplace
+                <span class="project-subtitle">Practical Full-Stack Web Development | React, Node.js, Express, MongoDB</span>
+              </h3>
+
+              <div class="project-bullets">
+                <div class="bullet-item">
+                  <span class="bullet-icon">●</span>
+                  <p>Developed as a practical web-development project during hands-on learning.</p>
+                </div>
+                <div class="bullet-item">
+                  <span class="bullet-icon">●</span>
+                  <p>Worked on the project to build practical full-stack web-development skills.</p>
+                </div>
+              </div>
+
+              <div class="project-actions">
+                <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline" data-magnetic>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>Repository</span>
+                </a>
+                <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-ghost" data-magnetic>
+                  <span>Live Platform ↗</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MARQUEE SKILLS TICKER -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">DATA ANALYTICS &amp; DATA SCIENCE</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">PYTHON</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">NUMPY &amp; PANDAS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">SEABORN &amp; MATPLOTLIB</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">MACHINE LEARNING</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">CNN &amp; RNN NEURAL NETWORKS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">PROBABILITY &amp; STATISTICS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">SCIKIT-LEARN</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">SQL &amp; RELATIONAL DATA</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">POWER BI DASHBOARDS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">ADVANCED EXCEL</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">REACT.JS &amp; NODE.JS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">MONGODB &amp; REST APIS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">GIT &amp; GITHUB</span>
+        <span class="marquee-sep">✦</span>
+        <!-- Duplicated for seamless infinite scroll -->
+        <span class="marquee-item">DATA ANALYTICS &amp; DATA SCIENCE</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">PYTHON</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">NUMPY &amp; PANDAS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">SEABORN &amp; MATPLOTLIB</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">MACHINE LEARNING</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">CNN &amp; RNN NEURAL NETWORKS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">PROBABILITY &amp; STATISTICS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">SCIKIT-LEARN</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">SQL &amp; RELATIONAL DATA</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">POWER BI DASHBOARDS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">ADVANCED EXCEL</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">REACT.JS &amp; NODE.JS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">MONGODB &amp; REST APIS</span>
+        <span class="marquee-sep">✦</span>
+        <span class="marquee-item">GIT &amp; GITHUB</span>
+        <span class="marquee-sep">✦</span>
+      </div>
+    </div>
+
+    <!-- SECTION 4: JOURNEY & SKILLS -->
+    <section class="journey-section" id="journey">
+      <div class="section-container">
+        
+        <div class="journey-layout">
+
+          <!-- LEFT COLUMN: EDUCATION & LEARNING JOURNEY -->
+          <div class="journey-timeline-col">
+            <div class="section-badge">
+              <span class="badge-num">// 03</span>
+              <span class="badge-label">BACKGROUND &amp; MILESTONES</span>
+            </div>
+            <h2 class="section-title">The <span class="text-accent italic-serif">Trajectory</span></h2>
+            <p class="journey-col-desc">
+              Academic rigor paired with proactive self-directed mastery. Every milestone documented honestly.
+            </p>
+            <!-- VERIFIED DEVELOPER SPOTLIGHT CARD -->
+            <div class="journey-profile-spotlight" data-tilt>
+              <div class="spotlight-avatar-wrap">
+                <img src="assets/satish-profile.jpg" alt="Satish Kumar" class="spotlight-avatar-img">
+                <span class="spotlight-pulse"></span>
+              </div>
+              <div class="spotlight-info">
+                <div class="spotlight-badge-row">
+                  <span class="spotlight-id">ID // SIRT-CSIT-2027</span>
+                  <span class="spotlight-verified">✓ Verified Academic Profile</span>
+                </div>
+                <h3 class="spotlight-name">Satish Kumar</h3>
+                <p class="spotlight-desc">
+                  4th-Year B.Tech CSIT student at SIRT Bhopal. Translating complex data into actionable analytical clarity, while engineering resilient end-to-end full-stack web applications.
+                </p>
+                <div class="spotlight-stats">
+                  <div class="stat-item">
+                    <span class="stat-num">4th</span>
+                    <span class="stat-label">Academic Year</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-num">2027</span>
+                    <span class="stat-label">Graduation</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-num">10+</span>
+                    <span class="stat-label">Core Tech</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-stream">
+
+              <!-- Item 1: B.Tech -->
+              <div class="timeline-card">
+                <div class="timeline-indicator">
+                  <span class="indicator-dot active"></span>
+                  <span class="indicator-line"></span>
+                </div>
+                <div class="timeline-body">
+                  <div class="timeline-meta">
+                    <span class="timeline-period">2023 — 2027 (Currently 4th Year)</span>
+                    <span class="timeline-status-badge">In Progress</span>
+                  </div>
+                  <h3 class="timeline-role">B.Tech in Computer Science &amp; Information Technology</h3>
+                  <h4 class="timeline-org">Sagar Institute of Research &amp; Technology (SIRT), Bhopal</h4>
+                  <p class="timeline-details">
+                    Deepening theoretical foundation in algorithms, databases, data engineering, operating systems, and intelligent computing.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 2: Self-Taught Full Stack -->
+              <div class="timeline-card">
+                <div class="timeline-indicator">
+                  <span class="indicator-dot"></span>
+                  <span class="indicator-line"></span>
+                </div>
+                <div class="timeline-body">
+                  <div class="timeline-meta">
+                    <span class="timeline-period">Self-Directed Curriculum</span>
+                    <span class="timeline-status-badge outline">Self-Taught</span>
+                  </div>
+                  <h3 class="timeline-role">Full Stack Web Engineering</h3>
+                  <h4 class="timeline-org">Autonomous Practical Implementation</h4>
+                  <p class="timeline-details">
+                    Hands-on project-driven learning across JavaScript, React, Node.js, Express, and MongoDB. Built full-stack apps with secure authentication and database persistence.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Item 3: Data Analytics Learning -->
+              <div class="timeline-card">
+                <div class="timeline-indicator">
+                  <span class="indicator-dot"></span>
+                </div>
+                <div class="timeline-body">
+                  <div class="timeline-meta">
+                    <span class="timeline-period">Specialized Learning</span>
+                    <span class="timeline-status-badge outline">Coursework</span>
+                  </div>
+                  <h3 class="timeline-role">Data Analytics &amp; Pipeline Mastery</h3>
+                  <h4 class="timeline-org">CodeWithHarry Learning Path</h4>
+                  <p class="timeline-details">
+                    Structured training in Python for data science, SQL queries and data manipulation, Advanced Excel formulas and macros, and Power BI visual dashboards.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: SKILLS BREAKDOWN BY CATEGORY -->
+          <div class="journey-skills-col">
+            <div class="section-badge">
+              <span class="badge-num">// 04</span>
+              <span class="badge-label">VERIFIED SKILLSET</span>
+            </div>
+            <h2 class="section-title">Technical <span class="text-accent italic-serif">Arsenal</span></h2>
+            <p class="journey-col-desc">
+              Skills validated through actual code, dashboards, and deployed architectures.
+            </p>
+
+            <div class="skills-category-group">
+
+              <!-- Category 1: Data Analytics & Data Science (NumPy, Pandas, Seaborn, Matplotlib, SQL, Power BI) -->
+              <div class="skill-category-card" data-tilt>
+                <div class="cat-header">
+                  <div class="cat-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="cat-title">Data Analytics &amp; Data Science</h3>
+                    <span class="cat-sub">Exploration, Cleaning, Pipelines &amp; Visual Analytics</span>
+                  </div>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-pill highlight-pill">Data Analytics</span>
+                  <span class="skill-pill highlight-pill">Data Science</span>
+                  <span class="skill-pill highlight-pill">Python</span>
+                  <span class="skill-pill highlight-pill">NumPy</span>
+                  <span class="skill-pill highlight-pill">Pandas</span>
+                  <span class="skill-pill highlight-pill">Seaborn</span>
+                  <span class="skill-pill">Matplotlib</span>
+                  <span class="skill-pill">SQL</span>
+                  <span class="skill-pill">Power BI</span>
+                  <span class="skill-pill">Excel</span>
+                  <span class="skill-pill">Advanced Excel</span>
+                  <span class="skill-pill">Data Cleaning</span>
+                  <span class="skill-pill">Exploratory Data Analysis (EDA)</span>
+                </div>
+              </div>
+
+              <!-- Category 2: Machine Learning & Deep Learning (CNN, RNN, Probability & Statistics, Scikit-Learn) -->
+              <div class="skill-category-card" data-tilt>
+                <div class="cat-header">
+                  <div class="cat-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="cat-title">Machine Learning &amp; Deep Learning</h3>
+                    <span class="cat-sub">Neural Architectures, Statistics &amp; Predictive Modeling</span>
+                  </div>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-pill highlight-pill">Machine Learning</span>
+                  <span class="skill-pill highlight-pill">CNN (ConvNet)</span>
+                  <span class="skill-pill highlight-pill">RNN (Recurrent)</span>
+                  <span class="skill-pill highlight-pill">Probability &amp; Statistics</span>
+                  <span class="skill-pill">Deep Learning</span>
+                  <span class="skill-pill">Neural Networks</span>
+                  <span class="skill-pill">Scikit-Learn</span>
+                  <span class="skill-pill">Supervised &amp; Unsupervised</span>
+                  <span class="skill-pill">Model Evaluation Metrics</span>
+                  <span class="skill-pill">Classification &amp; Regression</span>
+                </div>
+              </div>
+
+              <!-- Category 3: AI & Intelligent Systems -->
+              <div class="skill-category-card" data-tilt>
+                <div class="cat-header">
+                  <div class="cat-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                      <polyline points="2 17 12 22 22 17"></polyline>
+                      <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="cat-title">AI &amp; Software Security</h3>
+                    <span class="cat-sub">Autonomous Agents &amp; Security Engineering</span>
+                  </div>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-pill">Artificial Intelligence</span>
+                  <span class="skill-pill">AI-Focused Development</span>
+                  <span class="skill-pill">Software Security</span>
+                  <span class="skill-pill">AST Code Parsing</span>
+                  <span class="skill-pill">Autonomous Remediation</span>
+                </div>
+              </div>
+
+              <!-- Category 4: Full Stack Web Engineering -->
+              <div class="skill-category-card" data-tilt>
+                <div class="cat-header">
+                  <div class="cat-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="cat-title">Full Stack Development</h3>
+                    <span class="cat-sub">Reactive Frontend, Backend APIs &amp; Databases</span>
+                  </div>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-pill">React</span>
+                  <span class="skill-pill">Node.js</span>
+                  <span class="skill-pill">Express</span>
+                  <span class="skill-pill">MongoDB</span>
+                  <span class="skill-pill">RESTful APIs</span>
+                  <span class="skill-pill">JavaScript</span>
+                  <span class="skill-pill">HTML5</span>
+                  <span class="skill-pill">CSS3</span>
+                </div>
+              </div>
+
+              <!-- Category 5: Tools & Development Ecosystem -->
+              <div class="skill-category-card" data-tilt>
+                <div class="cat-header">
+                  <div class="cat-icon-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="cat-title">Tools &amp; Workflow</h3>
+                    <span class="cat-sub">Version Control, IDEs &amp; Collaborative Engineering</span>
+                  </div>
+                </div>
+                <div class="skill-chips">
+                  <span class="skill-pill">Git</span>
+                  <span class="skill-pill">GitHub</span>
+                  <span class="skill-pill">VS Code</span>
+                  <span class="skill-pill">Jupyter Notebooks</span>
+                  <span class="skill-pill">Collaborative Workflow</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- ACHIEVEMENTS & HIGHLIGHTS (Direct from Resume) -->
+        <div class="achievements-wrap" id="achievements">
+          <div class="achievements-header">
+            <div class="section-badge">
+              <span class="badge-num">// 05</span>
+              <span class="badge-label">RESUME ACHIEVEMENTS &amp; KEY STRENGTHS</span>
+            </div>
+            <h2 class="section-title">Verified <span class="text-accent italic-serif">Milestones</span></h2>
+          </div>
+
+          <div class="achievements-grid">
+            <div class="achievement-card" data-tilt>
+              <div class="achieve-num">01</div>
+              <h3 class="achieve-title">Multi-Disciplinary Project Delivery</h3>
+              <p class="achieve-desc">Completed and documented practical projects across Data Analytics, Data Science, AI-focused development, and Full-Stack web development.</p>
+            </div>
+            <div class="achievement-card" data-tilt>
+              <div class="achieve-num">02</div>
+              <h3 class="achieve-title">Applied Technical Arsenal</h3>
+              <p class="achieve-desc">Built hands-on experience by applying Python, SQL, Excel, Power BI, React, Node.js, Express, MongoDB, Git and GitHub in real project work.</p>
+            </div>
+            <div class="achievement-card" data-tilt>
+              <div class="achieve-num">03</div>
+              <h3 class="achieve-title">Structured Curricula Completion</h3>
+              <p class="achieve-desc">Completed structured Data Analytics learning with CodeWithHarry along with comprehensive Full Stack Web Development self-directed curriculum.</p>
+            </div>
+            <div class="achievement-card" data-tilt>
+              <div class="achieve-num">04</div>
+              <h3 class="achieve-title">Collaborative Version Control</h3>
+              <p class="achieve-desc">Comfortable with Git-based version control for collaborative engineering; actively expanding technical breadth across data and web development.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACT & FOOTER -->
+    <footer class="contact-section" id="contact">
+      <div class="section-container">
+        
+        <div class="contact-hero-wrap">
+          <div class="section-badge center">
+            <span class="badge-num">// 06</span>
+            <span class="badge-label">GET IN TOUCH</span>
+          </div>
+
+          <h2 class="contact-giant-title">
+            Let's create something <span class="italic-serif text-accent">great</span> together.
+          </h2>
+
+          <p class="contact-subhead">
+            Open for entry-level roles, internships, and collaborative data science or full-stack initiatives. Reach out directly via email, phone, or LinkedIn.
+          </p>
+
+          <!-- DIRECT CONTACT BADGES WITH 1-CLICK COPY -->
+          <div class="contact-cards-grid">
+
+            <!-- Card 1: Email -->
+            <div class="contact-card">
+              <div class="contact-card-top">
+                <span class="contact-method-tag">EMAIL ADDRESS</span>
+                <span class="copy-hint" id="emailCopyHint">Click to copy</span>
+              </div>
+              <div class="contact-value-row">
+                <a href="mailto:satishkumar86367@gmail.com" class="contact-text-link">satishkumar86367@gmail.com</a>
+                <button class="copy-btn" id="copyEmailBtn" data-copy="satishkumar86367@gmail.com" aria-label="Copy Email Address">
+                  <svg class="copy-icon-idle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <svg class="copy-icon-done" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2: Phone -->
+            <div class="contact-card">
+              <div class="contact-card-top">
+                <span class="contact-method-tag">PHONE NUMBER</span>
+                <span class="copy-hint" id="phoneCopyHint">Click to copy</span>
+              </div>
+              <div class="contact-value-row">
+                <a href="tel:+919798545934" class="contact-text-link">+91 9798545934</a>
+                <button class="copy-btn" id="copyPhoneBtn" data-copy="+919798545934" aria-label="Copy Phone Number">
+                  <svg class="copy-icon-idle" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <svg class="copy-icon-done" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3b30" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- CONNECT LINKS PILLS -->
+          <div class="connect-pills">
+            <a href="https://github.com/satish-dev-git" target="_blank" rel="noopener noreferrer" class="social-pill" data-magnetic>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+              </svg>
+              <span>github.com/satish-dev-git</span>
+              <span class="pill-arrow">↗</span>
+            </a>
+
+            <a href="https://linkedin.com/in/satish-kumar-995140294" target="_blank" rel="noopener noreferrer" class="social-pill" data-magnetic>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+              <span>linkedin.com/in/satish-kumar-995140294</span>
+              <span class="pill-arrow">↗</span>
+            </a>
+          </div>
+
+          <!-- INTERACTIVE QUICK MESSAGE BOX -->
+          <div class="quick-inquiry-box">
+            <h3 class="inquiry-title">Send a Quick Message</h3>
+            <p class="inquiry-sub">Prefills your email client directly or simulates submission</p>
+            <form id="contactForm" class="inquiry-form" onsubmit="return false;">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="senderName" class="form-label">Your Name</label>
+                  <input type="text" id="senderName" class="form-input" placeholder="e.g. Alex Mercer" required>
+                </div>
+                <div class="form-group">
+                  <label for="senderEmail" class="form-label">Your Email</label>
+                  <input type="email" id="senderEmail" class="form-input" placeholder="alex@company.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="senderMessage" class="form-label">Project / Role Details</label>
+                <textarea id="senderMessage" class="form-input textarea" rows="3" placeholder="Tell me about your role or project requirements..." required></textarea>
+              </div>
+              <div class="form-submit-row">
+                <button type="submit" class="btn btn-primary" id="formSubmitBtn" data-magnetic>
+                  <span>Dispatch Message</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </button>
+                <span class="form-feedback" id="formFeedback"></span>
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- FOOTER SUB-BAR -->
+        <div class="footer-meta-bar">
+          <div class="footer-meta-left">
+            <span>&copy; <span id="currentYear">2026</span> Satish Kumar. Handcrafted with precision.</span>
+            <span class="footer-meta-sep">/</span>
+            <span>Bhopal, India &bull; <span id="bhopalClock" class="clock-display">--:--:-- IST</span></span>
+          </div>
+          <div class="footer-meta-right">
+            <a href="#hero" class="back-to-top-btn" data-magnetic aria-label="Back to top">
+              <span>Top</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="19" x2="12" y2="5"></line>
+                <polyline points="5 12 12 5 19 12"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+</html>
