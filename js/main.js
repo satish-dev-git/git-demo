@@ -719,41 +719,109 @@
   setInterval(updateClock, 1000);
   updateClock();
 
-  // --- 13. QUICK INQUIRY FORM SIMULATION ---
+  // --- 13. DIRECT INBOX FORM SUBMISSION (FORMSUBMIT AJAX) ---
   const contactForm = document.getElementById('contactForm');
   const formFeedback = document.getElementById('formFeedback');
+  const formSubmitBtn = document.getElementById('formSubmitBtn');
 
   if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const name = document.getElementById('senderName').value.trim();
-      const email = document.getElementById('senderEmail').value.trim();
-      const msg = document.getElementById('senderMessage').value.trim();
+      const nameInput = document.getElementById('senderName');
+      const emailInput = document.getElementById('senderEmail');
+      const msgInput = document.getElementById('senderMessage');
 
-      if (!name || !email || !msg) return;
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const msg = msgInput ? msgInput.value.trim() : '';
 
-      // Construct mailto for instant zero-config dispatch
-      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
-      const mailtoUrl = `mailto:satishkumar86367@gmail.com?subject=${subject}&body=${body}`;
+      if (!name || !email || !msg) {
+        if (formFeedback) {
+          formFeedback.textContent = 'Please fill out all fields.';
+          formFeedback.style.color = '#ef4444';
+        }
+        return;
+      }
+
+      // UI Loading state
+      const originalBtnHtml = formSubmitBtn ? formSubmitBtn.innerHTML : '';
+      if (formSubmitBtn) {
+        formSubmitBtn.disabled = true;
+        formSubmitBtn.style.opacity = '0.7';
+        formSubmitBtn.style.pointerEvents = 'none';
+        const span = formSubmitBtn.querySelector('span');
+        if (span) span.textContent = 'Sending...';
+      }
 
       if (formFeedback) {
-        formFeedback.textContent = 'Redirecting to your mail client...';
-        formFeedback.style.color = '#10b981';
+        formFeedback.textContent = 'Delivering directly to Satish...';
+        formFeedback.style.color = '#38bdf8';
       }
 
       playSoftClick(720, 0.06);
 
-      setTimeout(() => {
+      // Construct mailto fallback url
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+      const mailtoUrl = `mailto:satishkumar86367@gmail.com?subject=${subject}&body=${body}`;
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/satishkumar86367@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: msg,
+            _subject: `New Portfolio Message from ${name} (${email})`,
+            _template: 'table',
+            _captcha: 'false'
+          })
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok || data.success === 'true' || data.success === true) {
+          playSoftClick(880, 0.1);
+          if (formFeedback) {
+            formFeedback.textContent = '✓ Message delivered directly to Satish\'s inbox!';
+            formFeedback.style.color = '#10b981';
+          }
+          contactForm.reset();
+        } else {
+          // If activation is needed or first-time notice
+          if (data.message && data.message.toLowerCase().includes('activation')) {
+            if (formFeedback) {
+              formFeedback.textContent = '✓ Message sent! Activation link sent to Satish.';
+              formFeedback.style.color = '#10b981';
+            }
+            contactForm.reset();
+          } else {
+            throw new Error(data.message || 'Submission error');
+          }
+        }
+      } catch (err) {
+        console.warn('Direct submit fallback to mailto:', err);
+        if (formFeedback) {
+          formFeedback.textContent = 'Opening your mail client...';
+          formFeedback.style.color = '#f59e0b';
+        }
         window.location.href = mailtoUrl;
         contactForm.reset();
-        if (formFeedback) {
-          formFeedback.textContent = 'Message drafted successfully!';
-          setTimeout(() => {
-            formFeedback.textContent = '';
-          }, 4000);
+      } finally {
+        if (formSubmitBtn) {
+          formSubmitBtn.disabled = false;
+          formSubmitBtn.style.opacity = '1';
+          formSubmitBtn.style.pointerEvents = 'all';
+          formSubmitBtn.innerHTML = originalBtnHtml;
         }
-      }, 600);
+        setTimeout(() => {
+          if (formFeedback) formFeedback.textContent = '';
+        }, 6000);
+      }
     });
   }
 
