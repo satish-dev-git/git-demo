@@ -1156,21 +1156,21 @@
           <!-- INTERACTIVE QUICK MESSAGE BOX -->
           <div class="quick-inquiry-box">
             <h3 class="inquiry-title">Send a Quick Message</h3>
-            <p class="inquiry-sub">Prefills your email client directly or simulates submission</p>
+            <p class="inquiry-sub">Direct delivery to Satish's inbox &bull; Guaranteed response within 24 hours</p>
             <form id="contactForm" class="inquiry-form" onsubmit="return false;">
               <div class="form-row">
                 <div class="form-group">
                   <label for="senderName" class="form-label">Your Name</label>
-                  <input type="text" id="senderName" class="form-input" placeholder="e.g. Alex Mercer" required>
+                  <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g. Alex Mercer" required>
                 </div>
                 <div class="form-group">
                   <label for="senderEmail" class="form-label">Your Email</label>
-                  <input type="email" id="senderEmail" class="form-input" placeholder="alex@company.com" required>
+                  <input type="email" id="senderEmail" name="email" class="form-input" placeholder="alex@company.com" required>
                 </div>
               </div>
               <div class="form-group">
                 <label for="senderMessage" class="form-label">Project / Role Details</label>
-                <textarea id="senderMessage" class="form-input textarea" rows="3" placeholder="Tell me about your role or project requirements..." required></textarea>
+                <textarea id="senderMessage" name="message" class="form-input textarea" rows="3" placeholder="Tell me about your role or project requirements..." required></textarea>
               </div>
               <div class="form-submit-row">
                 <button type="submit" class="btn btn-primary" id="formSubmitBtn" data-magnetic>
